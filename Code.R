@@ -34,4 +34,6 @@ plot(grouped_data$year, grouped_data$Emissions,
 grouped_data <- NEI %>% group_by(year, type) %>% summarise(Emissions = sum(Emissions))
 
 ggplot(grouped_data) +
-        geom_point(aes(year, Emissions)) + facet_wrap(~type)
+        geom_point(aes(year, Emissions)) + facet_wrap(~type, scales = "free")
+
+
