@@ -37,3 +37,9 @@ ggplot(grouped_data) +
         geom_point(aes(year, Emissions)) + facet_wrap(~type, scales = "free")
 
 
+grouped_data <- NEI[NEI$EI.Sector %like% "Coal",] %>% group_by(year) %>% summarise(Emissions = sum(Emissions))
+
+ggplot(grouped_data) +
+        geom_point(aes(year, Emissions)) + facet_wrap(~type, scales = "free")
+
+
